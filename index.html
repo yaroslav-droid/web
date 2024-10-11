@@ -156,13 +156,8 @@
             });
 
             function requestData() {
-                // Сохраняем данные в localStorage
-                let logs = JSON.parse(localStorage.getItem('layer7Logs')) || [];
                 let currentTime = new Date().getTime();
                 let randomValue = Math.floor(Math.random() * 50) + 1; // генерируем случайное значение
-
-                logs.push([currentTime, randomValue]);
-                localStorage.setItem('layer7Logs', JSON.stringify(logs));
 
                 var series = simpleChart.series[0];
                 let shift = series.data.length > 20; 
